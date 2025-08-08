@@ -14,7 +14,7 @@ namespace LexiconConsole
             while (Running)
             {
                 Console.Clear();
-                Console.WriteLine("Calculator\n\nChoices:");
+                Console.WriteLine("Calculator\n\nEnter a number to choose:");
                 Console.WriteLine("    1: Addition");
                 Console.WriteLine("    2: Subtraction");
                 Console.WriteLine("    3: Multiplication");
@@ -23,8 +23,7 @@ namespace LexiconConsole
                 Console.WriteLine("    6: Root");
                 Console.WriteLine("    7: Quit");
                 Console.Write("\n> ");
-                string input = Console.ReadLine() ?? "";
-                switch (input)
+                switch (Console.ReadLine() ?? "")
                 {
                     case "1":
                         Addition();
