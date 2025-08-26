@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LexiconConsole
 {
-    static class Calculator
+    public static class Calculator
     {
         private static bool Running = true;
         public static void Run()
@@ -59,7 +59,7 @@ namespace LexiconConsole
             float c = DoAddition(a, b);
             PrintResult(a.ToString() + " + " + b.ToString() + " = " + c);
         }
-        private static float DoAddition(float a, float b)
+        public static float DoAddition(float a, float b)
         {
             return a + b;
         }
@@ -71,7 +71,7 @@ namespace LexiconConsole
             float c = DoSubtraction(a, b);
             PrintResult(a.ToString() + " - " + b.ToString() + " = " + c);
         }
-        private static float DoSubtraction(float a, float b)
+        public static float DoSubtraction(float a, float b)
         {
             return a - b;
         }
@@ -83,7 +83,7 @@ namespace LexiconConsole
             float c = DoMultiplication(a, b);
             PrintResult(a.ToString() + " * " + b.ToString() + " = " + c);
         }
-        private static float DoMultiplication(float a, float b)
+        public static float DoMultiplication(float a, float b)
         {
             return a * b;
         }
@@ -98,7 +98,7 @@ namespace LexiconConsole
             else
                 PrintResult(a.ToString() + " / " + b.ToString() + " = " + c.ToString());
         }
-        private static float DoDivision(float a, float b)
+        public static float DoDivision(float a, float b)
         {
             return a / b;
         }
@@ -110,7 +110,7 @@ namespace LexiconConsole
             float c = DoPower(a, b);
             PrintResult(a.ToString() + " ^ " + b.ToString() + " = " + c.ToString());
         }
-        private static float DoPower(float a, float b)
+        public static float DoPower(float a, float b)
         {
             return (float)Math.Pow(a, b);
         }
@@ -122,7 +122,7 @@ namespace LexiconConsole
             string c = DoRoot(a, b);
             PrintResult("The root of " + b.ToString() + " with the degree " + a.ToString() + " is " + c);
         }
-        private static string DoRoot(float a, float b)
+        public static string DoRoot(float a, float b)
         {
             return Math.Sign(b) == -1 ? "imaginary" : Math.Pow(b, 1.0 / a).ToString();
         }
