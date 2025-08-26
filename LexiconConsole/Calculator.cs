@@ -56,51 +56,75 @@ namespace LexiconConsole
             string s = "Addition\n\n";
             float a = GetNumber(s + "Input term A");
             float b = GetNumber(s + "Input term B");
-            float c = a + b;
+            float c = DoAddition(a, b);
             PrintResult(a.ToString() + " + " + b.ToString() + " = " + c);
+        }
+        private static float DoAddition(float a, float b)
+        {
+            return a + b;
         }
         private static void Subtraction()
         {
             string s = "Subtraction\n\n";
             float a = GetNumber(s + "Input term A");
             float b = GetNumber(s + "Input term B");
-            float c = a - b;
+            float c = DoSubtraction(a, b);
             PrintResult(a.ToString() + " - " + b.ToString() + " = " + c);
+        }
+        private static float DoSubtraction(float a, float b)
+        {
+            return a - b;
         }
         private static void Multiplication()
         {
             string s = "Multiplication\n\n";
             float a = GetNumber(s + "Input factor A");
             float b = GetNumber(s + "Input factor B");
-            float c = a * b;
+            float c = DoMultiplication(a, b);
             PrintResult(a.ToString() + " * " + b.ToString() + " = " + c);
+        }
+        private static float DoMultiplication(float a, float b)
+        {
+            return a * b;
         }
         private static void Division()
         {
             string s = "Division\n\n";
             float a = GetNumber(s + "Input numerator");
             float b = GetNumber(s + "Input denominator");
-            float c = a / b;
+            float c = DoDivision(a, b); ;
             if (b == 0)
                 PrintResult("Cannot divide by 0");
             else
                 PrintResult(a.ToString() + " / " + b.ToString() + " = " + c.ToString());
+        }
+        private static float DoDivision(float a, float b)
+        {
+            return a / b;
         }
         private static void Power()
         {
             string s = "Power\n\n";
             float a = GetNumber(s + "Input base:");
             float b = GetNumber(s + "Input power:");
-            float c = (float)Math.Pow(a, b);
+            float c = DoPower(a, b);
             PrintResult(a.ToString() + " ^ " + b.ToString() + " = " + c.ToString());
+        }
+        private static float DoPower(float a, float b)
+        {
+            return (float)Math.Pow(a, b);
         }
         private static void Root()
         {
             string s = "Root\n\n";
             float a = GetNumber(s + "Input degree:");
             float b = GetNumber(s + "Input radicand:");
-            string c = Math.Sign(b) == -1 ? "imaginary" : Math.Pow(b, 1.0 / a).ToString();
+            string c = DoRoot(a, b);
             PrintResult("The root of " + b.ToString() + " with the degree " + a.ToString() + " is " + c);
+        }
+        private static string DoRoot(float a, float b)
+        {
+            return Math.Sign(b) == -1 ? "imaginary" : Math.Pow(b, 1.0 / a).ToString();
         }
         private static void PrintResult(string res)
         {
